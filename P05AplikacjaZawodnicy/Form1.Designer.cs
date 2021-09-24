@@ -29,13 +29,34 @@ namespace P05AplikacjaZawodnicy
         /// </summary>
         private void InitializeComponent()
         {
+            this.lbDane = new System.Windows.Forms.ListBox();
+            this.btnWczytaj = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // lbDane
+            // 
+            this.lbDane.FormattingEnabled = true;
+            this.lbDane.Location = new System.Drawing.Point(12, 41);
+            this.lbDane.Name = "lbDane";
+            this.lbDane.Size = new System.Drawing.Size(331, 329);
+            this.lbDane.TabIndex = 0;
+            // 
+            // btnWczytaj
+            // 
+            this.btnWczytaj.Location = new System.Drawing.Point(12, 12);
+            this.btnWczytaj.Name = "btnWczytaj";
+            this.btnWczytaj.Size = new System.Drawing.Size(75, 23);
+            this.btnWczytaj.TabIndex = 1;
+            this.btnWczytaj.Text = "Wczytaj";
+            this.btnWczytaj.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 485);
+            this.ClientSize = new System.Drawing.Size(365, 385);
+            this.Controls.Add(this.btnWczytaj);
+            this.Controls.Add(this.lbDane);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -43,6 +64,9 @@ namespace P05AplikacjaZawodnicy
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lbDane;
+        private System.Windows.Forms.Button btnWczytaj;
     }
 }
 
