@@ -52,7 +52,9 @@ namespace P05AplikacjaZawodnicy.Repositories
 
         public void UsunZawodnika(int id)
         {
-            string connString =  ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
+            string connString =  ConfigurationManager.
+                ConnectionStrings["mojConnString"].
+                ConnectionString;
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie($"delete zawodnicy where id_zawodnika={id}");
