@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01PolaczenieZBaza", "P01Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02PolaczenieZBaza", "P02PolaczenieZBaza\P02PolaczenieZBaza.csproj", "{93C8EDA7-0C74-4039-8A63-04C48FECD677}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03BibliotekaPolaczenieZBaza", "P03BibliotekaPolaczenieZBaza\P03BibliotekaPolaczenieZBaza.csproj", "{5420364D-5B6F-4F31-8AC9-3AE232A17545}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{93C8EDA7-0C74-4039-8A63-04C48FECD677}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93C8EDA7-0C74-4039-8A63-04C48FECD677}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93C8EDA7-0C74-4039-8A63-04C48FECD677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5420364D-5B6F-4F31-8AC9-3AE232A17545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5420364D-5B6F-4F31-8AC9-3AE232A17545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5420364D-5B6F-4F31-8AC9-3AE232A17545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5420364D-5B6F-4F31-8AC9-3AE232A17545}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

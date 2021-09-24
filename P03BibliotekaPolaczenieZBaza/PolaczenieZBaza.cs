@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P02PolaczenieZBaza
+namespace P03BibliotekaPolaczenieZBaza
 {
-    class PolaczenieZBaza
+    public class PolaczenieZBaza
     {
         string connString;
 
