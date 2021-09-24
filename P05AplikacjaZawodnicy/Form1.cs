@@ -90,7 +90,7 @@ namespace P05AplikacjaZawodnicy
             txtKraj.Text = z.Kraj;
             txtDaraUr.Text = z.DataUrodzenia.ToString();
             txtWaga.Text = z.Waga.ToString();
-            txtWzrost.Text = z.Wzrost.ToString();
+            txtWzrostZ.Text = z.Wzrost.ToString();
         }
     }
 }

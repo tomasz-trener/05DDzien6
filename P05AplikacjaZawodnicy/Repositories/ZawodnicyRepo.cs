@@ -80,8 +80,8 @@ namespace P05AplikacjaZawodnicy.Repositories
             pzb.WykonajZapytanie(
                 $"update zawodnicy " +
                 $"set imie = '{z.Imie}', nazwisko = '{z.Nazwisko}', kraj = '{z.Kraj}'," +
-                $"data_ur = '{z.DataUrodzenia}', wzrost = {z.Wzrost}, waga = {z.Waga}" +
-                $"where id_zawodnika = {z.Id_zawodnika}"
+                $"data_ur = '{z.DataUrodzenia.ToString("yyyyMMdd")}', wzrost = {z.Wzrost}, waga = {z.Waga}" +
+                $" where id_zawodnika = {z.Id_zawodnika}"
                 );
         }
     }
