@@ -83,7 +83,6 @@ namespace P05AplikacjaZawodnicy.Repositories
                 $"data_ur = '{z.DataUrodzenia}', wzrost = {z.Wzrost}, waga = {z.Waga}" +
                 $"where id_zawodnika = {z.Id_zawodnika}"
                 );
-
         }
     }
 }

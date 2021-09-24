@@ -47,6 +47,7 @@ namespace P05AplikacjaZawodnicy
             this.txtWzrostZ = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnEdytuj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDane
@@ -56,6 +57,7 @@ namespace P05AplikacjaZawodnicy
             this.lbDane.Name = "lbDane";
             this.lbDane.Size = new System.Drawing.Size(256, 329);
             this.lbDane.TabIndex = 0;
+            this.lbDane.SelectedIndexChanged += new System.EventHandler(this.lbDane_SelectedIndexChanged);
             // 
             // btnWczytaj
             // 
@@ -199,11 +201,22 @@ namespace P05AplikacjaZawodnicy
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
+            // btnEdytuj
+            // 
+            this.btnEdytuj.Location = new System.Drawing.Point(275, 101);
+            this.btnEdytuj.Name = "btnEdytuj";
+            this.btnEdytuj.Size = new System.Drawing.Size(75, 23);
+            this.btnEdytuj.TabIndex = 18;
+            this.btnEdytuj.Text = "Edytuj";
+            this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 385);
+            this.Controls.Add(this.btnEdytuj);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.txtWzrostZ);
             this.Controls.Add(this.label7);
@@ -249,6 +262,7 @@ namespace P05AplikacjaZawodnicy
         private System.Windows.Forms.TextBox txtWzrostZ;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.Button btnEdytuj;
     }
 }
 

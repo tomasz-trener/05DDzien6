@@ -65,5 +65,32 @@ namespace P05AplikacjaZawodnicy
 
 
         }
+
+        private void btnEdytuj_Click(object sender, EventArgs e)
+        {
+            Zawodnik z = (Zawodnik)lbDane.SelectedItem;
+            z.Imie = txtImie.Text;
+            z.Nazwisko = txtNazwisko.Text;
+            z.Kraj = txtKraj.Text;
+            z.DataUrodzenia = Convert.ToDateTime(txtDaraUr.Text);
+            z.Wzrost = Convert.ToInt32(txtWzrostZ.Text);
+            z.Waga = Convert.ToInt32(txtWaga.Text);
+
+            ZawodnicyRepo zr = new ZawodnicyRepo();
+            zr.Edytuj(z);
+            Odswiez();
+
+        }
+
+        private void lbDane_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Zawodnik z = (Zawodnik)lbDane.SelectedItem;
+            txtImie.Text = z.Imie;
+            txtNazwisko.Text = z.Nazwisko;
+            txtKraj.Text = z.Kraj;
+            txtDaraUr.Text = z.DataUrodzenia.ToString();
+            txtWaga.Text = z.Waga.ToString();
+            txtWzrost.Text = z.Wzrost.ToString();
+        }
     }
 }
