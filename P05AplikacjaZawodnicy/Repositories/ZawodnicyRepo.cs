@@ -2,6 +2,7 @@
 using P05AplikacjaZawodnicy.Domain;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,10 +11,11 @@ namespace P05AplikacjaZawodnicy.Repositories
 {
     class ZawodnicyRepo
     {
-
         public Zawodnik[] PodajZawodnikow()
         {
-            string connString = "Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa;Password=alx";
+            // string connString =           ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
+            string connString =           ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
+
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
 
@@ -50,7 +52,7 @@ namespace P05AplikacjaZawodnicy.Repositories
 
         public void UsunZawodnika(int id)
         {
-            string connString = "Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa;Password=alx";
+            string connString =  ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             pzb.WykonajZapytanie($"delete zawodnicy where id_zawodnika={id}");
@@ -58,7 +60,7 @@ namespace P05AplikacjaZawodnicy.Repositories
 
         public void DodajZawodnika(Zawodnik z)
         {
-            string connString = "Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa;Password=alx";
+            string connString =           ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
 
             pzb.WykonajZapytanie(
@@ -74,7 +76,7 @@ namespace P05AplikacjaZawodnicy.Repositories
 
         public void Edytuj(Zawodnik z)
         {
-            string connString = "Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa;Password=alx";
+            string connString =           ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
 
             pzb.WykonajZapytanie(
