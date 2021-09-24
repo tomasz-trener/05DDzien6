@@ -8,7 +8,7 @@ namespace P05AplikacjaZawodnicy.Domain
 {
     class Trener
     {
-        public int Id;
+        public int? Id;
         public string Imie;
         public string Nazwisko;
         public DateTime? DataUr;

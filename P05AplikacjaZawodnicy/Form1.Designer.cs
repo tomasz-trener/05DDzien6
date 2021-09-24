@@ -215,6 +215,7 @@ namespace P05AplikacjaZawodnicy
             // 
             // cbTrener
             // 
+            this.cbTrener.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrener.FormattingEnabled = true;
             this.cbTrener.Location = new System.Drawing.Point(346, 170);
             this.cbTrener.Name = "cbTrener";

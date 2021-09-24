@@ -34,7 +34,10 @@ namespace P05AplikacjaZawodnicy
                 ((Zawodnik[])lbDane.DataSource).Sum(x => x.Wzrost).ToString();
 
             TrenerzyRepo tr = new TrenerzyRepo();
-            cbTrener.DataSource = tr.PodajTrenerow();
+
+            List<Trener> trenerzy = tr.PodajTrenerow().ToList();
+            trenerzy.Insert(0,new Trener());
+            cbTrener.DataSource = trenerzy.ToArray();
             cbTrener.DisplayMember = "ImieNazwisko";
         }
 
@@ -95,6 +98,27 @@ namespace P05AplikacjaZawodnicy
             txtDaraUr.Text = z.DataUrodzenia.ToString();
             txtWaga.Text = z.Waga.ToString();
             txtWzrostZ.Text = z.Wzrost.ToString();
+
+            Trener[] trenerzy = (Trener[])cbTrener.DataSource;
+            // teraz szukamy trenera , który trenuje zawnika z 
+            if (trenerzy != null)
+            {
+                if (z.Id_trenera != null)
+                {
+                    for (int i = 0; i < trenerzy.Length; i++)
+                        if (trenerzy[i].Id == z.Id_trenera)
+                        {
+                            cbTrener.SelectedItem = trenerzy[i];
+                            break;
+                        }
+                }
+                else
+                    cbTrener.SelectedIndex = 0;
+            }
+            
+              
+            
+
         }
     }
 }
