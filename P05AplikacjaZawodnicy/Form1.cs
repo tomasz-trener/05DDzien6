@@ -32,6 +32,10 @@ namespace P05AplikacjaZawodnicy
 
             txtWzrost.Text = 
                 ((Zawodnik[])lbDane.DataSource).Sum(x => x.Wzrost).ToString();
+
+            TrenerzyRepo tr = new TrenerzyRepo();
+            cbTrener.DataSource = tr.PodajTrenerow();
+            cbTrener.DisplayMember = "ImieNazwisko";
         }
 
         private void btnUsun_Click(object sender, EventArgs e)

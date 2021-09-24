@@ -17,7 +17,7 @@ namespace P05AplikacjaZawodnicy.Repositories
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
             object[][] wynik = pzb.WykonajZapytanie(
                 @"SELECT 
-                  ,[id_trenera]
+                  [id_trenera]
                   ,[imie_t]
                   ,[nazwisko_t]
                   ,[data_ur_t]
@@ -30,7 +30,8 @@ namespace P05AplikacjaZawodnicy.Repositories
                 t.Id = Convert.ToInt32(wynik[i][0]);
                 t.Imie = wynik[i][1].ToString();
                 t.Nazwisko = wynik[i][2].ToString();
-                t.DataUr = Convert.ToDateTime(wynik[i][3]);
+                if (t.DataUr is DateTime)
+                   t.DataUr = Convert.ToDateTime(wynik[i][3]);
                 trenerzy[i] = t;
             }
             return trenerzy;

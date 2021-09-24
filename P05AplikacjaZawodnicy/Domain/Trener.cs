@@ -11,7 +11,8 @@ namespace P05AplikacjaZawodnicy.Domain
         public int Id;
         public string Imie;
         public string Nazwisko;
-        public DateTime DataUr;
+        public DateTime? DataUr;
 
+        public string ImieNazwisko { get { return Imie + " " + Nazwisko; } }
     }
 }

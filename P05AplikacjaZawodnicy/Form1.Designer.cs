@@ -48,6 +48,8 @@ namespace P05AplikacjaZawodnicy
             this.label7 = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnEdytuj = new System.Windows.Forms.Button();
+            this.cbTrener = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbDane
@@ -211,11 +213,30 @@ namespace P05AplikacjaZawodnicy
             this.btnEdytuj.UseVisualStyleBackColor = true;
             this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
             // 
+            // cbTrener
+            // 
+            this.cbTrener.FormattingEnabled = true;
+            this.cbTrener.Location = new System.Drawing.Point(346, 170);
+            this.cbTrener.Name = "cbTrener";
+            this.cbTrener.Size = new System.Drawing.Size(118, 21);
+            this.cbTrener.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(284, 178);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Trener";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 385);
+            this.ClientSize = new System.Drawing.Size(478, 385);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbTrener);
             this.Controls.Add(this.btnEdytuj);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.txtWzrostZ);
@@ -263,6 +284,8 @@ namespace P05AplikacjaZawodnicy
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnEdytuj;
+        private System.Windows.Forms.ComboBox cbTrener;
+        private System.Windows.Forms.Label label8;
     }
 }
 
