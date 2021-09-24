@@ -50,5 +50,20 @@ namespace P05AplikacjaZawodnicy
             }
             
         }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            Zawodnik z = new Zawodnik(txtImie.Text, txtNazwisko.Text);
+            z.Kraj = txtKraj.Text;
+            z.DataUrodzenia = Convert.ToDateTime(txtDaraUr.Text);
+            z.Wzrost = Convert.ToInt32(txtWzrostZ.Text);
+            z.Waga = Convert.ToInt32(txtWaga.Text);
+
+            ZawodnicyRepo zr = new ZawodnicyRepo();
+            zr.DodajZawodnika(z);
+            Odswiez();
+
+
+        }
     }
 }

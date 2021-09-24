@@ -63,13 +63,15 @@ namespace P05AplikacjaZawodnicy.Repositories
 
             pzb.WykonajZapytanie(
                 $"insert into zawodnicy values " +
-                $"({z.Id_trenera}, " +
+                $"({z.Id_TreneraDB}, " +
                 $"'{z.Imie}', " +
                 $"'{z.Nazwisko}', " +
                 $"'{z.Kraj}', " +
                 $"'{z.DataUrodzenia}', " +
                 $"{z.Wzrost}, " +
                 $"{z.Waga})");
+
+
 
         }
     }

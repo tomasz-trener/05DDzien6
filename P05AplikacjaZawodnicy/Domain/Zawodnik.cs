@@ -17,6 +17,15 @@ namespace P05AplikacjaZawodnicy.Domain
         public int Wzrost;
         public int Waga;
 
+        public string Id_TreneraDB
+        {
+            get 
+            {
+                if (Id_trenera == null)
+                    return "null";
+                return Id_trenera.ToString();
+            }
+        }
 
         public string Wiersz
         {
