@@ -17,6 +17,7 @@ namespace P05AplikacjaZawodnicy.Domain
         public int Wzrost;
         public int Waga;
 
+
         public string Wiersz
         {
             get
@@ -26,6 +27,11 @@ namespace P05AplikacjaZawodnicy.Domain
         }
 
         public string ImieNazwisko { get { return Imie + " " + Nazwisko; } }
+
+        public string ImieNazwiskoWzrost
+        {
+            get { return ImieNazwisko + " " + Wzrost; }
+        }
 
         // poniewaz nie ma w tej klasie zdefiniowanych żadnych innych konstruktórow 
         // to obecnie jedyną możliwością jest stworzenie nowego zawodnika używajac 

@@ -48,6 +48,29 @@ namespace P05AplikacjaZawodnicy.Repositories
 
         }
 
+        public void UsunZawodnika(int id)
+        {
+            string connString = "Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa;Password=alx";
 
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+            pzb.WykonajZapytanie($"delete zawodnicy where id_zawodnika={id}");
+        }
+
+        public void DodajZawodnika(Zawodnik z)
+        {
+            string connString = "Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa;Password=alx";
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
+
+            pzb.WykonajZapytanie(
+                $"insert into zawodnicy values " +
+                $"({z.Id_trenera}, " +
+                $"'{z.Imie}', " +
+                $"'{z.Nazwisko}', " +
+                $"'{z.Kraj}', " +
+                $"'{z.DataUrodzenia}', " +
+                $"{z.Wzrost}, " +
+                $"{z.Waga})");
+
+        }
     }
 }
