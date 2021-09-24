@@ -70,8 +70,19 @@ namespace P05AplikacjaZawodnicy.Repositories
                 $"'{z.DataUrodzenia}', " +
                 $"{z.Wzrost}, " +
                 $"{z.Waga})");
+        }
 
+        public void Edytuj(Zawodnik z)
+        {
+            string connString = "Data Source=.;Initial Catalog=A_Zawodnicy;User ID=sa;Password=alx";
+            PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
 
+            pzb.WykonajZapytanie(
+                $"update zawodnicy " +
+                $"set imie = '{z.Imie}', nazwisko = '{z.Nazwisko}', kraj = '{z.Kraj}'," +
+                $"data_ur = '{z.DataUrodzenia}', wzrost = {z.Wzrost}, waga = {z.Waga}" +
+                $"where id_zawodnika = {z.Id_zawodnika}"
+                );
 
         }
     }
