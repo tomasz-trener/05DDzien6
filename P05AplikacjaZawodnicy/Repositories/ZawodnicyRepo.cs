@@ -11,25 +11,14 @@ namespace P05AplikacjaZawodnicy.Repositories
 {
     class ZawodnicyRepo
     {
-        public Zawodnik[] PodajZawodnikow()
+        private Zawodnik[] PodajZawodnikowSQL(string sql)
         {
             // string connString =           ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
-            string connString =           ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
-
+            string connString =   ConfigurationManager.ConnectionStrings["mojConnString"].ConnectionString;
 
             PolaczenieZBaza pzb = new PolaczenieZBaza(connString);
 
-            object[][] wynik= pzb.WykonajZapytanie(
-                @"SELECT 
-                   [id_zawodnika]
-                  ,[id_trenera]
-                  ,[imie]
-                  ,[nazwisko]
-                  ,[kraj]
-                  ,[data_ur]
-                  ,[wzrost]
-                  ,[waga] 
-                 FROM zawodnicy");
+            object[][] wynik= pzb.WykonajZapytanie(sql);
 
             // teraz musimy przekształcić tablę object[][] na Zawodnik[]
 
@@ -48,6 +37,42 @@ namespace P05AplikacjaZawodnicy.Repositories
             }
             return zawodnicy;
 
+        }
+
+        public Zawodnik[] PodajZawodnikow()
+        {
+            string sql = @"SELECT 
+                   [id_zawodnika]
+                  ,[id_trenera]
+                  ,[imie]
+                  ,[nazwisko]
+                  ,[kraj]
+                  ,[data_ur]
+                  ,[wzrost]
+                  ,[waga] 
+                 FROM zawodnicy";
+            return PodajZawodnikowSQL(sql);
+        }
+
+        public Zawodnik[] PodajZawodnikow(string filtr)
+        {
+            string sql = $@"SELECT 
+                   [id_zawodnika]
+                  ,[id_trenera]
+                  ,[imie]
+                  ,[nazwisko]
+                  ,[kraj]
+                  ,[data_ur]
+                  ,[wzrost]
+                  ,[waga] 
+                  FROM zawodnicy
+	              where imie like '%{filtr}% ' or
+	              nazwisko like '%{filtr}%' or
+                  kraj like '%{filtr}%' or
+		          FORMAT(data_ur,'yyyy-MM-dd') like '%{filtr}%'  or
+		          FORMAT(wzrost,'0') like '%{filtr}%' or
+		          FORMAT(waga,'0') like '%{filtr}%'";
+            return PodajZawodnikowSQL(sql);
         }
 
         public void UsunZawodnika(int id)

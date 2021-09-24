@@ -50,6 +50,8 @@ namespace P05AplikacjaZawodnicy
             this.btnEdytuj = new System.Windows.Forms.Button();
             this.cbTrener = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtSzukaj = new System.Windows.Forms.TextBox();
+            this.btnSzukaj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDane
@@ -231,11 +233,30 @@ namespace P05AplikacjaZawodnicy
             this.label8.TabIndex = 20;
             this.label8.Text = "Trener";
             // 
+            // txtSzukaj
+            // 
+            this.txtSzukaj.Location = new System.Drawing.Point(274, 12);
+            this.txtSzukaj.Name = "txtSzukaj";
+            this.txtSzukaj.Size = new System.Drawing.Size(100, 20);
+            this.txtSzukaj.TabIndex = 21;
+            // 
+            // btnSzukaj
+            // 
+            this.btnSzukaj.Location = new System.Drawing.Point(380, 10);
+            this.btnSzukaj.Name = "btnSzukaj";
+            this.btnSzukaj.Size = new System.Drawing.Size(75, 23);
+            this.btnSzukaj.TabIndex = 22;
+            this.btnSzukaj.Text = "Szukaj";
+            this.btnSzukaj.UseVisualStyleBackColor = true;
+            this.btnSzukaj.Click += new System.EventHandler(this.btnSzukaj_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 385);
+            this.Controls.Add(this.btnSzukaj);
+            this.Controls.Add(this.txtSzukaj);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbTrener);
             this.Controls.Add(this.btnEdytuj);
@@ -287,6 +308,8 @@ namespace P05AplikacjaZawodnicy
         private System.Windows.Forms.Button btnEdytuj;
         private System.Windows.Forms.ComboBox cbTrener;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSzukaj;
+        private System.Windows.Forms.Button btnSzukaj;
     }
 }
 

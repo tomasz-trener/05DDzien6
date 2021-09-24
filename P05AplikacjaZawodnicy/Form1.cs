@@ -115,10 +115,14 @@ namespace P05AplikacjaZawodnicy
                 else
                     cbTrener.SelectedIndex = 0;
             }
-            
-              
-            
+             
+        }
 
+        private void btnSzukaj_Click(object sender, EventArgs e)
+        {
+            ZawodnicyRepo zr = new ZawodnicyRepo();
+            lbDane.DataSource = zr.PodajZawodnikow(txtSzukaj.Text);
+            lbDane.DisplayMember = "ImieNazwiskoWzrost";
         }
     }
 }
